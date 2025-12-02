@@ -1,0 +1,92 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-box form div {
+  margin-bottom: 1rem;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.forgot-password {
+  float: right;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.login-box button[type="submit"] {
+  background-color: #007bff;
+}
+
+.signup-btn {
+  background-color: #6c757d;
+  margin: 0.5rem 0;
+}
+
+.or-divider {
+  text-align: center;
+  margin: 1rem 0;
+  color: #6c757d;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+}
+
+.google-btn,
+.github-btn {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  width: 48%;
+}
+
+.brand-info {
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.brand-info img {
+  width: 50px;
+}
+
+.brand-info h1 {
+  font-size: 2rem;
+}
