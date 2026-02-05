@@ -17,6 +17,7 @@
     "bcryptjs": "^3.0.2",
     "chart.js": "^4.5.0",
     "dayjs": "^1.11.18",
+    "env": "^0.0.2",
     "jsonwebtoken": "^9.0.2",
     "jspdf": "^3.0.3",
     "jspdf-autotable": "^5.0.2",
