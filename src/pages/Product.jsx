@@ -52,7 +52,7 @@ const Product = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axiosInstance.get("/product/viewProduct");
+      const res = await axiosInstance.get("/api/product/viewProduct");
       let allProducts = res.data.allProduct;
 
       // Automatically delete products with stock 0
@@ -61,14 +61,14 @@ const Product = () => {
       );
       for (const product of zeroStockProducts) {
         try {
-          await axiosInstance.delete(`/product/delProduct/${product._id}`);
+          await axiosInstance.delete(`/api/product/delProduct/${product._id}`);
         } catch (err) {
           console.log("Failed to delete product", product.name, err);
         }
       }
 
       // Fetch again after deletion to update state
-      const updatedRes = await axiosInstance.get("/product/viewProduct");
+      const updatedRes = await axiosInstance.get("/api/product/viewProduct");
       setwife(updatedRes);
     } catch (error) {
       console.log(error);
@@ -95,7 +95,7 @@ const Product = () => {
   // modal form
   const onFinish = async (values) => {
     try {
-      await axiosInstance.post("/product/addProduct", values);
+      await axiosInstance.post("/api/product/addProduct", values);
     } catch (error) {
       console.log(error);
     }
@@ -124,7 +124,7 @@ const Product = () => {
   const onFinish1 = async (values) => {
     try {
       await axiosInstance
-        .put(`/product/editProduct/${Rid}`, values)
+        .put(`/api/product/editProduct/${Rid}`, values)
         .then((res) => {
           console.log(res);
           console.log("Form Values:", values); // <-- print values in console
@@ -143,7 +143,7 @@ const Product = () => {
   const findOneProduct = async (record) => {
     try {
       await axiosInstance
-        .get(`/product/findOneProduct/${record._id}`)
+        .get(`/api/product/findOneProduct/${record._id}`)
         .then((res) => {
           setRid(record._id);
           console.log(res.data.getProduct);
@@ -177,7 +177,7 @@ const Product = () => {
   const delProduct = async (record) => {
     try {
       await axiosInstance
-        .delete(`/product/delProduct/${record._id}`)
+        .delete(`/api/product/delProduct/${record._id}`)
         .then((res) => {
           console.log(res);
           fetchProducts(); //refresh table

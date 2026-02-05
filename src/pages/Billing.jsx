@@ -50,7 +50,7 @@ const Billing = () => {
 
   // search
   const filteredProducts = products.filter((item) =>
-    item.name.toLowerCase().includes(productSearch.toLowerCase())
+    item.name.toLowerCase().includes(productSearch.toLowerCase()),
   );
 
   // Inside your Billing component
@@ -74,7 +74,7 @@ const Billing = () => {
   const allProduct = async () => {
     try {
       await axiosInstance
-        .get("/product/viewProduct")
+        .get("/api/product/viewProduct")
         .then((res) => {
           setProducts(res.data.allProduct);
           // console.log(res.data);
@@ -125,8 +125,8 @@ const Billing = () => {
                 qty: item.qty + qty,
                 total: (item.qty + qty) * item.retailPrice,
               }
-            : item
-        )
+            : item,
+        ),
       );
     } else {
       setCart([
@@ -172,8 +172,8 @@ const Billing = () => {
               cart.map((item) =>
                 item._id === record._id
                   ? { ...item, qty: value, total: item.price * value }
-                  : item
-              )
+                  : item,
+              ),
             );
           }}
         />
@@ -255,7 +255,10 @@ const Billing = () => {
 
       // Save bill data to the database
       try {
-        const response = await axiosInstance.post("/bills/saveBill", billData);
+        const response = await axiosInstance.post(
+          "/api/bills/saveBill",
+          billData,
+        );
         console.log(response);
         console.log("Bill saved to database:", response.data);
         toast.success("Bill saved successfully!");

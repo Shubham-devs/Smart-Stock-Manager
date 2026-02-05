@@ -25,7 +25,7 @@ function Dashboard() {
     const fetchRecentBills = async () => {
       try {
         setLoading(true);
-        const response = await axiosInstance.get("/bills/recentBills");
+        const response = await axiosInstance.get("/api/bills/recentBills");
         setRecentBills(response.data);
       } catch (error) {
         console.error("Error fetching recent bills:", error);

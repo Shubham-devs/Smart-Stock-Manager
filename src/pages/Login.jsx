@@ -19,7 +19,7 @@ const Login = () => {
     // console.log(values);
     try {
       await axiosInstance
-        .post(`/auth/login`, values)
+        .post(`/api/auth/login`, values)
         .then((res) => {
           // setwife(res.data);
           const reply = res.status;

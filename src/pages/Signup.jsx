@@ -19,7 +19,7 @@ const Signup = () => {
     // console.log(values);
     try {
       await axiosInstance
-        .post("/auth/register", values)
+        .post("/api/auth/register", values)
         .then((res) => {
           //   setwife(res);
           alert(res.data.message);

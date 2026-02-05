@@ -29,7 +29,7 @@ const Expenses = () => {
   useEffect(() => {
     const fetchExpenses = async () => {
       try {
-        const res = await axiosInstance.get("/expenses/viewExpense");
+        const res = await axiosInstance.get("/api/expenses/viewExpense");
         if (res?.status === 200) {
           const formatted = res.data.map((item) => ({
             key: item._id,
@@ -57,7 +57,7 @@ const Expenses = () => {
   // Delete expense
   const handleDelete = async (id) => {
     try {
-      const res = await axiosInstance.delete(`/expenses/${id}`);
+      const res = await axiosInstance.delete(`/api/expenses/${id}`);
       if (res?.status === 200) {
         alert("Expense deleted successfully");
         setData((prev) => prev.filter((item) => item.key !== id));
@@ -87,7 +87,7 @@ const Expenses = () => {
 
     try {
       await axiosInstance
-        .post("/expenses/addExpense", newExpense)
+        .post("/api/expenses/addExpense", newExpense)
         .then((res) => {
           alert("Expense added successfully");
 
@@ -147,7 +147,7 @@ const Expenses = () => {
         data: categories.map((cat) =>
           data
             .filter((item) => item.category === cat)
-            .reduce((sum, item) => sum + item.amount, 0)
+            .reduce((sum, item) => sum + item.amount, 0),
         ),
         backgroundColor: [
           "#FF6384",
