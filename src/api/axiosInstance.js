@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "https://smart-stock-manager-backend.onrender.com",
+    
     timeout: 3000,
 });
 
