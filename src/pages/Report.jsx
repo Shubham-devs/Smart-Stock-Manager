@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, Tag, Input, Space, Card } from "antd";
 import axios from "axios";
+import axiosInstance from "../api/axiosInstance";
 
 const { Search } = Input;
 
@@ -15,7 +16,7 @@ const Report = () => {
 
   const fetchBills = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/bills/allBills");
+      const res = await axiosInstance.get("api/bills/allBills");
       setBills(res.data.allBills);
     } catch (err) {
       console.log("Fetch Error:", err);
@@ -25,7 +26,7 @@ const Report = () => {
   // Pay Bill Function
   const payBill = async (record) => {
     try {
-      await axios.put(`http://localhost:5001/api/bills/payBill/${record._id}`);
+      await axiosInstance.get(`api/bills/payBill/${record._id}`);
       fetchBills(); // refresh table
     } catch (err) {
       console.log("Payment Error:", err);
