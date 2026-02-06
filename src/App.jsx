@@ -109,7 +109,7 @@ const App = () => {
         key="2"
         onClick={() => {
           localStorage.removeItem("userToken");
-          navigate("/login");
+          navigate("/");
         }}
       >
         Logout

@@ -23,7 +23,7 @@ const Signup = () => {
         .then((res) => {
           //   setwife(res);
           alert(res.data.message);
-          navigate("/login");
+          navigate("/");
         })
         .catch((error) => {
           console.log(error);
@@ -119,7 +119,7 @@ const Signup = () => {
                         return Promise.resolve();
                       }
                       return Promise.reject(
-                        new Error("The two passwords do not match")
+                        new Error("The two passwords do not match"),
                       );
                     },
                   }),
@@ -193,7 +193,7 @@ const Signup = () => {
               <div className="text-center mt-5">
                 <Text type="secondary">
                   Already have an account?{" "}
-                  <a href="/login" className="text-blue-600">
+                  <a href="/" className="text-blue-600">
                     Log in
                   </a>
                 </Text>

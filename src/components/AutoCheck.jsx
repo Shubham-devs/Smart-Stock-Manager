@@ -14,11 +14,11 @@ const AutoCheck = () => {
         setTimeout(() => {
           localStorage.removeItem("uid");
           console.log("UID deleted automatically after 30 minutes ⏳");
-          navigate("/login"); // Redirect after deletion
+          navigate("/"); // Redirect after deletion
         }, 120000);
       } else {
         console.log("No UID found ❌, redirecting to login...");
-        navigate("/login");
+        navigate("/");
       }
     };
 

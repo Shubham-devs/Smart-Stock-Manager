@@ -38,7 +38,7 @@ instance.interceptors.response.use(
             console.log("Unauthorized error. Redirecting to login...");
             alert("Please login again!");
             localStorage.removeItem("userToken");
-            window.location.href = "/login"; // ✅ redirect using browser
+            window.location.href = "/"; // ✅ redirect using browser
 
         }
         return Promise.reject(error);
