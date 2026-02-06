@@ -26,7 +26,7 @@ const Login = () => {
           alert("Login successful");
           // console.log(res);
           if (res?.status === 200) {
-            navigate("/");
+            navigate("/dashboard");
             localStorage.setItem("userToken", res.data.userToken);
             // console.log(res.data);
           }
